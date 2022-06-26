@@ -73,7 +73,7 @@ namespace StoreManager.Infrastructure.Services
             return item;
         }
 
-        public async Task<(int total, int totalDisplay, IList<Item> records)> GetItemsAsynce
+        public async Task<(int total, int totalDisplay, IList<Item> records)> GetItemsAsync
             (int pageIndex,int pageSize, string searchText, string orderBy)
         {
             var results = await _storeUnitOfWork.Items.GetDynamicAsync(x => x.ItemName

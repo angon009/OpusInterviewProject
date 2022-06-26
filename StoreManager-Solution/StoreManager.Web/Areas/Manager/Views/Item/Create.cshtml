@@ -1,0 +1,47 @@
+﻿@model ItemCRUDModel
+@{
+    ViewData["Title"] = "Add New Item";
+    ViewData["PageNav"] = "Add";
+}
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Create Item Form</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form role="form" asp-controller="Item" asp-action="Create" method="post" asp-antiforgery="true">
+                    <div class="card-body">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label for="customerName">Item Name</label>
+                            <input type="text" class="form-control" asp-for="ItemName" id="itemName">
+                            <span asp-validation-for="ItemName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerName">Item Code</label>
+                            <input type="text" class="form-control" asp-for="ItemCode" id="itemCode">
+                            <span asp-validation-for="ItemCode" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerName">Item Price</label>
+                            <input type="text" class="form-control" asp-for="Price" id="price">
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.card -->
+            <!--/.col (left) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>

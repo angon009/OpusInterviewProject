@@ -1,0 +1,17 @@
+﻿@{
+    string message = TempData["ResponseMessage"] as string;
+    ResponseTypes responseTypes = ResponseTypes.Danger;
+
+    if(!string.IsNullOrWhiteSpace(message))
+    {
+        responseTypes = (ResponseTypes)TempData["ResponseType"];
+    }
+     
+}
+@if(!string.IsNullOrWhiteSpace(message))
+{
+    <div class="alert alert-@(responseTypes.ToString().ToLower())" role="alert">
+       @message 
+    </div>  
+}
+ 
